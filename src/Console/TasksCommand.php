@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Envoy\Console;
+namespace Sanuj\Diplomat\Console;
 
-use Laravel\Envoy\Compiler;
-use Laravel\Envoy\TaskContainer;
+use Sanuj\Diplomat\Compiler;
+use Sanuj\Diplomat\TaskContainer;
 
 class TasksCommand extends \Symfony\Component\Console\Command\Command
 {
@@ -39,7 +39,7 @@ class TasksCommand extends \Symfony\Component\Console\Command\Command
     /**
      * List the tasks from the container.
      *
-     * @param  \Laravel\Envoy\TaskContainer  $container
+     * @param  \Sanuj\Diplomat\TaskContainer  $container
      * @return void
      */
     protected function listTasks($container)
@@ -54,7 +54,7 @@ class TasksCommand extends \Symfony\Component\Console\Command\Command
     /**
      * List the macros from the container.
      *
-     * @param  \Laravel\Envoy\TaskContainer  $container
+     * @param  \Sanuj\Diplomat\TaskContainer  $container
      * @return void
      */
     protected function listMacros($container)
@@ -69,7 +69,7 @@ class TasksCommand extends \Symfony\Component\Console\Command\Command
     /**
      * Load the task container instance with the Envoy file.
      *
-     * @return \Laravel\Envoy\TaskContainer
+     * @return \Sanuj\Diplomat\TaskContainer
      */
     protected function loadTaskContainer()
     {

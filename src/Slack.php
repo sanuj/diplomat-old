@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 use Httpful\Request;
 
@@ -37,7 +37,7 @@ class Slack
      * @param  mixed   $channel
      * @param  string  $message
      * @param  array  $options
-     * @return \Laravel\Envoy\Slack
+     * @return \Sanuj\Diplomat\Slack
      */
     public static function make($hook, $channel = '', $message = null, $options = [])
     {

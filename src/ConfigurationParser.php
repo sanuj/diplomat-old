@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 trait ConfigurationParser
 {
@@ -21,7 +21,7 @@ trait ConfigurationParser
      * Get the SSH configuration file instance.
      *
      * @param  string  $user
-     * @return \Laravel\Envoy\SSHConfigFile|null
+     * @return \Sanuj\Diplomat\SSHConfigFile|null
      */
     protected function getSshConfig($user)
     {

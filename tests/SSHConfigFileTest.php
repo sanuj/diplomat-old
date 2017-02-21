@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 class SSHConfigFileTest extends TestCase
 {

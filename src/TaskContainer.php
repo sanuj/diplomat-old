@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 use Closure;
 use Illuminate\Support\Arr;
@@ -91,7 +91,7 @@ class TaskContainer
      * No data is needed.
      *
      * @param  string  $path
-     * @param  \Laravel\Envoy\Compiler  $compiler
+     * @param  \Sanuj\Diplomat\Compiler  $compiler
      * @return void
      */
     public function loadServers($path, Compiler $compiler)
@@ -103,7 +103,7 @@ class TaskContainer
      * Load the Envoy file into the container.
      *
      * @param  string  $__path
-     * @param  \Laravel\Envoy\Compiler  $__compiler
+     * @param  \Sanuj\Diplomat\Compiler  $__compiler
      * @param  array  $__data
      * @param  bool  $__serversOnly
      * @return void
@@ -138,7 +138,7 @@ class TaskContainer
     /**
      * Write the compiled Envoy file to disk.
      *
-     * @param  \Laravel\Envoy\Compiler  $compiler
+     * @param  \Sanuj\Diplomat\Compiler  $compiler
      * @param  string  $path
      * @param  bool  $serversOnly
      * @return string
@@ -318,7 +318,7 @@ class TaskContainer
      * @param  string  $task
      * @param  array  $macroOptions
      * @throws \Exception
-     * @return \Laravel\Envoy\Task
+     * @return \Sanuj\Diplomat\Task
      */
     public function getTask($task, array $macroOptions = [])
     {

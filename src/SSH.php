@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 use Closure;
 use Symfony\Component\Process\Process;
@@ -12,7 +12,7 @@ class SSH extends RemoteProcessor
     /**
      * Run the given task over SSH.
      *
-     * @param  \Laravel\Envoy\Task  $task
+     * @param  \Sanuj\Diplomat\Task  $task
      * @param  \Closure|null  $callback
      * @return int
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 class SSHConfigFile
 {
@@ -26,7 +26,7 @@ class SSHConfigFile
      * Parse the given configuration file.
      *
      * @param  string  $file
-     * @return \Laravel\Envoy\SSHConfigFile
+     * @return \Sanuj\Diplomat\SSHConfigFile
      */
     public static function parse($file)
     {
@@ -37,7 +37,7 @@ class SSHConfigFile
      * Parse the given configuration string.
      *
      * @param  string  $string
-     * @return \Laravel\Envoy\SSHConfigFile
+     * @return \Sanuj\Diplomat\SSHConfigFile
      */
     public static function parseString($string)
     {

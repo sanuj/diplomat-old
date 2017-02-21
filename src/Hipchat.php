@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 use Httpful\Request;
 
@@ -41,7 +41,7 @@ class Hipchat
      * @param  string  $from
      * @param  string  $message
      * @param  string  $color
-     * @return \Laravel\Envoy\Hipchat
+     * @return \Sanuj\Diplomat\Hipchat
      */
     public static function make($token, $room, $from, $message = null, $color = 'purple')
     {

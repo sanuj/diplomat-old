@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 class Compiler
 {
@@ -412,7 +412,7 @@ class Compiler
     {
         $pattern = $this->createMatcher('hipchat');
 
-        return preg_replace($pattern, '$1 Laravel\Envoy\Hipchat::make$2->task($task)->send();', $value);
+        return preg_replace($pattern, '$1 Sanuj\Diplomat\Hipchat::make$2->task($task)->send();', $value);
     }
 
     /**
@@ -425,7 +425,7 @@ class Compiler
     {
         $pattern = $this->createMatcher('slack');
 
-        return preg_replace($pattern, '$1 Laravel\Envoy\Slack::make$2->task($task)->send();', $value);
+        return preg_replace($pattern, '$1 Sanuj\Diplomat\Slack::make$2->task($task)->send();', $value);
     }
 
     /**
