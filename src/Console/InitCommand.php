@@ -18,7 +18,7 @@ class InitCommand extends SymfonyCommand
     {
         $this
             ->setName('init')
-            ->setDescription('Create a new Envoy file in the current directory.')
+            ->setDescription('Create a new Diplomat file in the current directory.')
             ->addArgument('host', InputArgument::REQUIRED, 'The host server to initialize with.');
     }
 
@@ -29,13 +29,13 @@ class InitCommand extends SymfonyCommand
      */
     protected function fire()
     {
-        if (file_exists(getcwd().'/Envoy.blade.php')) {
-            $this->output->writeln('<error>Envoy file already exists!</error>');
+        if (file_exists(getcwd().'/Diplomat.blade.php')) {
+            $this->output->writeln('<error>Diplomat file already exists!</error>');
 
             return;
         }
 
-        file_put_contents(getcwd().'/Envoy.blade.php', "@servers(['web' => '".$this->input->getArgument('host')."'])
+        file_put_contents(getcwd().'/Diplomat.blade.php', "@servers(['web' => '".$this->input->getArgument('host')."'])
 
 @task('deploy')
     cd /path/to/site
@@ -43,6 +43,6 @@ class InitCommand extends SymfonyCommand
 @endtask
 ");
 
-        $this->output->writeln('<info>Envoy file created!</info>');
+        $this->output->writeln('<info>Diplomat file created!</info>');
     }
 }

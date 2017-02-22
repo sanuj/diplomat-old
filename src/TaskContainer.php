@@ -86,7 +86,7 @@ class TaskContainer
     protected $macroOptions = [];
 
     /**
-     * Silently load the Envoy file into the container.
+     * Silently load the Diplomat file into the container.
      *
      * No data is needed.
      *
@@ -100,7 +100,7 @@ class TaskContainer
     }
 
     /**
-     * Load the Envoy file into the container.
+     * Load the Diplomat file into the container.
      *
      * @param  string  $__path
      * @param  \Sanuj\Diplomat\Compiler  $__compiler
@@ -112,10 +112,10 @@ class TaskContainer
     {
         $__dir = realpath(dirname($__path));
 
-        // First we will compiled the "Blade" Envoy file into plain PHP that we'll include
+        // First we will compiled the "Blade" Diplomat file into plain PHP that we'll include
         // into the current scope so it can register tasks in this task container that
         // is also in the current scope. We will extract this other data into scope.
-        $__envoyPath = $this->writeCompiledEnvoyFile(
+        $__envoyPath = $this->writeCompiledDiplomatFile(
             $__compiler, $__path, $__serversOnly
         );
 
@@ -123,7 +123,7 @@ class TaskContainer
 
         ob_start() && extract($__data);
 
-        // Here we will include the compiled Envoy file so it can register tasks into this
+        // Here we will include the compiled Diplomat file so it can register tasks into this
         // container instance. Then we will delete the PHP version of the file because
         // it is no longer needed once we have used it to register in the container.
         include $__envoyPath;
@@ -136,17 +136,17 @@ class TaskContainer
     }
 
     /**
-     * Write the compiled Envoy file to disk.
+     * Write the compiled Diplomat file to disk.
      *
      * @param  \Sanuj\Diplomat\Compiler  $compiler
      * @param  string  $path
      * @param  bool  $serversOnly
      * @return string
      */
-    protected function writeCompiledEnvoyFile($compiler, $path, $serversOnly)
+    protected function writeCompiledDiplomatFile($compiler, $path, $serversOnly)
     {
         file_put_contents(
-            $envoyPath = getcwd().'/Envoy'.md5_file($path).'.php',
+            $envoyPath = getcwd().'/Diplomat'.md5_file($path).'.php',
             $compiler->compile(file_get_contents($path), $serversOnly)
         );
 
@@ -249,7 +249,7 @@ class TaskContainer
             return $path;
         } elseif (($path = realpath($file.'.blade.php')) !== false) {
             return $path;
-        } elseif (($path = realpath(getcwd().'/vendor/'.$file.'/Envoy.blade.php')) !== false) {
+        } elseif (($path = realpath(getcwd().'/vendor/'.$file.'/Diplomat.blade.php')) !== false) {
             return $path;
         } elseif (($path = realpath(__DIR__.'/'.$file.'.blade.php')) !== false) {
             return $path;

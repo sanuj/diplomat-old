@@ -17,7 +17,7 @@ class TasksCommand extends \Symfony\Component\Console\Command\Command
     protected function configure()
     {
         $this->setName('tasks')
-                ->setDescription('Lists all Envoy tasks and macros.');
+                ->setDescription('Lists all Diplomat tasks and macros.');
     }
 
     /**
@@ -67,14 +67,14 @@ class TasksCommand extends \Symfony\Component\Console\Command\Command
     }
 
     /**
-     * Load the task container instance with the Envoy file.
+     * Load the task container instance with the Diplomat file.
      *
      * @return \Sanuj\Diplomat\TaskContainer
      */
     protected function loadTaskContainer()
     {
-        if (! file_exists($envoyFile = getcwd().'/Envoy.blade.php')) {
-            echo "Envoy.blade.php not found.\n";
+        if (! file_exists($envoyFile = getcwd().'/Diplomat.blade.php')) {
+            echo "Diplomat.blade.php not found.\n";
 
             exit(1);
         }

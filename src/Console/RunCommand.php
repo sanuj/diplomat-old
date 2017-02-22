@@ -42,7 +42,7 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
         $this->ignoreValidationErrors();
 
         $this->setName('run')
-                ->setDescription('Run an Envoy task.')
+                ->setDescription('Run an Diplomat task.')
                 ->addArgument('task', InputArgument::REQUIRED)
                 ->addOption('continue', null, InputOption::VALUE_NONE, 'Continue running even if a task fails')
                 ->addOption('pretend', null, InputOption::VALUE_NONE, 'Dump Bash script for inspection');
@@ -190,14 +190,14 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
     }
 
     /**
-     * Load the task container instance with the Envoy file.
+     * Load the task container instance with the Diplomat file.
      *
      * @return \Sanuj\Diplomat\TaskContainer
      */
     protected function loadTaskContainer()
     {
-        if (! file_exists($envoyFile = getcwd().'/Envoy.blade.php')) {
-            echo "Envoy.blade.php not found.\n";
+        if (! file_exists($envoyFile = getcwd().'/Diplomat.blade.php')) {
+            echo "Diplomat.blade.php not found.\n";
 
             exit(1);
         }

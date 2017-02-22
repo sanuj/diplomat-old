@@ -54,7 +54,7 @@ class Compiler
     protected $contentTags = ['{{', '}}'];
 
     /**
-     * Compile the given Envoy template contents.
+     * Compile the given Diplomat template contents.
      *
      * @param  string  $value
      * @param  bool  $serversOnly
@@ -74,7 +74,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy sets into valid PHP.
+     * Compile Diplomat sets into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -85,7 +85,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy imports into valid PHP.
+     * Compile Diplomat imports into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -98,7 +98,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy comments into valid PHP.
+     * Compile Diplomat comments into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -111,7 +111,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy echos into valid PHP.
+     * Compile Diplomat echos into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -154,7 +154,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy structure openings into valid PHP.
+     * Compile Diplomat structure openings into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -167,7 +167,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy structure closings into valid PHP.
+     * Compile Diplomat structure closings into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -180,7 +180,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy else statements into valid PHP.
+     * Compile Diplomat else statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -193,7 +193,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy unless statements into valid PHP.
+     * Compile Diplomat unless statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -206,7 +206,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy end unless statements into valid PHP.
+     * Compile Diplomat end unless statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -258,7 +258,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy server statements into valid PHP.
+     * Compile Diplomat server statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -271,7 +271,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy macro start statements into valid PHP.
+     * Compile Diplomat macro start statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -288,7 +288,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy macro stop statements into valid PHP.
+     * Compile Diplomat macro stop statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -305,7 +305,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy task start statements into valid PHP.
+     * Compile Diplomat task start statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -318,7 +318,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy task stop statements into valid PHP.
+     * Compile Diplomat task stop statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -331,7 +331,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy after statements into valid PHP.
+     * Compile Diplomat after statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -344,7 +344,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy after stop statements into valid PHP.
+     * Compile Diplomat after stop statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -355,7 +355,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy finished statements into valid PHP.
+     * Compile Diplomat finished statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -368,7 +368,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy finished stop statements into valid PHP.
+     * Compile Diplomat finished stop statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -379,7 +379,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy error statements into valid PHP.
+     * Compile Diplomat error statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -392,7 +392,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy error stop statements into valid PHP.
+     * Compile Diplomat error stop statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -403,7 +403,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy HipChat statements into valid PHP.
+     * Compile Diplomat HipChat statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -416,7 +416,7 @@ class Compiler
     }
 
     /**
-     * Compile Envoy Slack statements into valid PHP.
+     * Compile Diplomat Slack statements into valid PHP.
      *
      * @param  string  $value
      * @return string
@@ -429,7 +429,7 @@ class Compiler
     }
 
     /**
-     * Initialize the variables included in the Envoy template.
+     * Initialize the variables included in the Diplomat template.
      *
      * @param  string  $value
      * @return string
@@ -446,7 +446,7 @@ class Compiler
     }
 
     /**
-     * Get the regular expression for a generic Envoy function.
+     * Get the regular expression for a generic Diplomat function.
      *
      * @param  string  $function
      * @return string
@@ -457,7 +457,7 @@ class Compiler
     }
 
     /**
-     * Get the regular expression for a generic Envoy function.
+     * Get the regular expression for a generic Diplomat function.
      *
      * @param  string  $function
      * @return string
@@ -468,7 +468,7 @@ class Compiler
     }
 
     /**
-     * Create a plain Envoy matcher.
+     * Create a plain Diplomat matcher.
      *
      * @param  string  $function
      * @return string

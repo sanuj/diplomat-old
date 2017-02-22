@@ -21,7 +21,7 @@ class SshCommand extends \Symfony\Component\Console\Command\Command
     {
         $this
             ->setName('ssh')
-            ->setDescription('Connect to an Envoy server.')
+            ->setDescription('Connect to an Diplomat server.')
             ->addArgument('name', InputArgument::OPTIONAL, 'The name of the server.')
             ->addOption('user', null, InputOption::VALUE_OPTIONAL, 'The name of the user.');
     }
@@ -57,14 +57,14 @@ class SshCommand extends \Symfony\Component\Console\Command\Command
     }
 
     /**
-     * Load the task container instance with the Envoy file.
+     * Load the task container instance with the Diplomat file.
      *
      * @return \Sanuj\Diplomat\TaskContainer
      */
     protected function loadTaskContainer()
     {
         with($container = new TaskContainer)->loadServers(
-            getcwd().'/Envoy.blade.php', new Compiler, []
+            getcwd().'/Diplomat.blade.php', new Compiler, []
         );
 
         return $container;
