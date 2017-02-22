@@ -163,9 +163,11 @@ class TaskContainer
         foreach ($this->tasks as $name => &$script) {
             $callback = function ($m) { return $m[1].$this->tasks[$m[2]]; };
 
-            $script = $this->trimSpaces(
-                preg_replace_callback("/(\s*)@run\('(.*)'\)/", $callback, $script)
-            );
+            // $script = $this->trimSpaces(
+            //     preg_replace_callback("/(\s*)@run\('(.*)'\)/", $callback, $script)
+            // );
+
+            $script = preg_replace_callback("/(\s*)@run\('(.*)'\)/", $callback, $script);
         }
     }
 
@@ -386,7 +388,8 @@ class TaskContainer
      */
     public function endMacro()
     {
-        $macro = explode(PHP_EOL, $this->trimSpaces(trim(ob_get_clean())));
+        // $macro = explode(PHP_EOL, $this->trimSpaces(trim(ob_get_clean())));
+        $macro = explode(PHP_EOL, trim(ob_get_clean()));
 
         $this->macros[array_pop($this->macroStack)] = $macro;
     }
