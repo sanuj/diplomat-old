@@ -1,13 +1,10 @@
-@servers(['web' => ['127.0.0.1']])
+#!/usr/bin/env bash
 
-@task('foo', ['on' => 'web'])
 block="This is some text,
     whose indentation should not
-    be modified by diplomat.
+    be modified by dimplomat.
 "
 
 cat > "/home/sanuj/Projects/diplomat/scripts/temp.out" << EOF
 ${block}
 EOF
-
-@endtask
