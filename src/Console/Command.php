@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy\Console;
+namespace Sanuj\Diplomat\Console;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

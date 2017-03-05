@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Envoy\Console;
+namespace Sanuj\Diplomat\Console;
 
-use Laravel\Envoy\Compiler;
-use Laravel\Envoy\TaskContainer;
-use Laravel\Envoy\ConfigurationParser;
+use Sanuj\Diplomat\Compiler;
+use Sanuj\Diplomat\TaskContainer;
+use Sanuj\Diplomat\ConfigurationParser;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
@@ -21,7 +21,7 @@ class SshCommand extends \Symfony\Component\Console\Command\Command
     {
         $this
             ->setName('ssh')
-            ->setDescription('Connect to an Envoy server.')
+            ->setDescription('Connect to a Diplomat server.')
             ->addArgument('name', InputArgument::OPTIONAL, 'The name of the server.')
             ->addOption('user', null, InputOption::VALUE_OPTIONAL, 'The name of the user.');
     }
@@ -41,7 +41,7 @@ class SshCommand extends \Symfony\Component\Console\Command\Command
     /**
      * Get the server from the task container.
      *
-     * @param  \Laravel\Envoy\TaskContainer  $container
+     * @param  \Sanuj\Diplomat\TaskContainer  $container
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -57,14 +57,14 @@ class SshCommand extends \Symfony\Component\Console\Command\Command
     }
 
     /**
-     * Load the task container instance with the Envoy file.
+     * Load the task container instance with the Diplomat file.
      *
-     * @return \Laravel\Envoy\TaskContainer
+     * @return \Sanuj\Diplomat\TaskContainer
      */
     protected function loadTaskContainer()
     {
         with($container = new TaskContainer)->loadServers(
-            getcwd().'/Envoy.blade.php', new Compiler, []
+            getcwd().'/Diplomat.blade.php', new Compiler, []
         );
 
         return $container;

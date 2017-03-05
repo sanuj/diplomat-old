@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Envoy;
+namespace Sanuj\Diplomat;
 
 use Closure;
 use Symfony\Component\Process\Process;
@@ -10,7 +10,7 @@ abstract class RemoteProcessor
     /**
      * Run the given task over SSH.
      *
-     * @param  \Laravel\Envoy\Task  $task
+     * @param  \Sanuj\Diplomat\Task  $task
      * @return void
      */
     abstract public function run(Task $task, Closure $callback = null);
@@ -19,7 +19,7 @@ abstract class RemoteProcessor
      * Run the given script on the given host.
      *
      * @param  string  $host
-     * @param  \Laravel\Envoy\Task  $task
+     * @param  \Sanuj\Diplomat\Task  $task
      * @return int
      */
     protected function getProcess($host, Task $task)

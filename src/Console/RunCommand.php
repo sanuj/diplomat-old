@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Envoy\Console;
+namespace Sanuj\Diplomat\Console;
 
-use Laravel\Envoy\SSH;
-use Laravel\Envoy\Task;
-use Laravel\Envoy\Compiler;
-use Laravel\Envoy\ParallelSSH;
-use Laravel\Envoy\TaskContainer;
+use Sanuj\Diplomat\SSH;
+use Sanuj\Diplomat\Task;
+use Sanuj\Diplomat\Compiler;
+use Sanuj\Diplomat\ParallelSSH;
+use Sanuj\Diplomat\TaskContainer;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -42,7 +42,7 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
         $this->ignoreValidationErrors();
 
         $this->setName('run')
-                ->setDescription('Run an Envoy task.')
+                ->setDescription('Run a Diplomat task.')
                 ->addArgument('task', InputArgument::REQUIRED)
                 ->addOption('continue', null, InputOption::VALUE_NONE, 'Continue running even if a task fails')
                 ->addOption('pretend', null, InputOption::VALUE_NONE, 'Dump Bash script for inspection');
@@ -83,7 +83,7 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
     /**
      * Get the tasks from the container based on user input.
      *
-     * @param  \Laravel\Envoy\TaskContainer  $container
+     * @param  \Sanuj\Diplomat\TaskContainer  $container
      * @return void
      */
     protected function getTasks($container)
@@ -100,7 +100,7 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
     /**
      * Run the given task out of the container.
      *
-     * @param  \Laravel\Envoy\TaskContainer  $container
+     * @param  \Sanuj\Diplomat\TaskContainer  $container
      * @param  string  $task
      * @return null|int|void
      */
@@ -130,7 +130,7 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
     /**
      * Run the given task and return the exit code.
      *
-     * @param  \Laravel\Envoy\Task  $task
+     * @param  \Sanuj\Diplomat\Task  $task
      * @return int
      */
     protected function runTaskOverSSH(Task $task)
@@ -150,7 +150,7 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
     /**
      * Run the given task and return the exit code.
      *
-     * @param  \Laravel\Envoy\Task  $task
+     * @param  \Sanuj\Diplomat\Task  $task
      * @return int
      */
     protected function passToRemoteProcessor(Task $task)
@@ -190,14 +190,14 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
     }
 
     /**
-     * Load the task container instance with the Envoy file.
+     * Load the task container instance with the Diplomat file.
      *
-     * @return \Laravel\Envoy\TaskContainer
+     * @return \Sanuj\Diplomat\TaskContainer
      */
     protected function loadTaskContainer()
     {
-        if (! file_exists($envoyFile = getcwd().'/Envoy.blade.php')) {
-            echo "Envoy.blade.php not found.\n";
+        if (! file_exists($envoyFile = getcwd().'/Diplomat.blade.php')) {
+            echo "Diplomat.blade.php not found.\n";
 
             exit(1);
         }
@@ -251,8 +251,8 @@ class RunCommand extends \Symfony\Component\Console\Command\Command
     /**
      * Get the SSH processor for the task.
      *
-     * @param  \Laravel\Envoy\Task  $task
-     * @return \Laravel\Envoy\RemoteProcessor
+     * @param  \Sanuj\Diplomat\Task  $task
+     * @return \Sanuj\Diplomat\RemoteProcessor
      */
     protected function getRemoteProcessor(Task $task)
     {

@@ -1,5 +1,3 @@
-# Laravel Envoy
+# Diplomat
 
-Elegant SSH tasks for PHP.
-
-Official documentation [is located here](http://laravel.com/docs/envoy).
+Diplomatic SSH tasks for PHP.

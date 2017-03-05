@@ -11,7 +11,7 @@
          syntaxCheck="false"
         >
     <testsuites>
-        <testsuite name="Laravel Envoy Test Suite">
+        <testsuite name="Diplomat Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
