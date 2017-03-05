@@ -21,7 +21,7 @@ class SshCommand extends \Symfony\Component\Console\Command\Command
     {
         $this
             ->setName('ssh')
-            ->setDescription('Connect to an Diplomat server.')
+            ->setDescription('Connect to a Diplomat server.')
             ->addArgument('name', InputArgument::OPTIONAL, 'The name of the server.')
             ->addOption('user', null, InputOption::VALUE_OPTIONAL, 'The name of the user.');
     }
